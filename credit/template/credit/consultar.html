@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Resultado{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">   
+  {% for ticket_id in stage_id %}
+    <p>{{ ticket_id['stage'] }}</p>
+  {% endfor %} 
+
+</form>
+{% endblock %}

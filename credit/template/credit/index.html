@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Index{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('credit.index') }}"></a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    <span>{{ g.user['username'] }}</span>
+    <label for="age">Age</label>
+    <input name="age" id="age" required>
+    <label for="credit">Credit</label>
+    <input name="credit" id="credit" required>
+    <input type="submit" value="Consultar">
+
+  </form>
+{% endblock %}
